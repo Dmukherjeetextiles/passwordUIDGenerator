@@ -16,7 +16,7 @@ This is a simple web application built with Streamlit that generates unique IDs 
 1. Clone the repository:
 
 ```
-git clone https://github.com/your-username/unique-id-password-generator.git
+https://github.com/Dmukherjeetextiles/passwordUIDGenerator.git
 '''
 Navigate to the project directory:
 
