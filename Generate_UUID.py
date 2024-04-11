@@ -33,17 +33,21 @@ def generate_password(length=12, complexity='strong'):
 def main():
     st.title("Generate a Unique ID or Password")
     
-    if st.button("Generate UID"):
-        pathinput = generate_uuid()
-        Path = f'''{pathinput}'''
-        st.code(Path, language="python")
-        st.markdown("Enjoy!!")
+    col1, col2 = st.columns(2)
     
-    if st.button("Generate Password"):
-        pathinput = generate_password()
-        Path = f'''{pathinput}'''
-        st.code(Path, language="python")
-        st.markdown("Enjoy!!")
+    with col1:
+        if st.button("Generate UID"):
+            pathinput = generate_uuid()
+            Path = f'''{pathinput}'''
+            st.code(Path, language="python")
+            st.markdown("Enjoy!!")
+    
+    with col2:
+        if st.button("Generate Password"):
+            pathinput = generate_password()
+            Path = f'''{pathinput}'''
+            st.code(Path, language="python")
+            st.markdown("Enjoy!!")
 
 if __name__ == "__main__":
     main()
