@@ -31,7 +31,7 @@ pip install -r requirements.txt
 Run the Streamlit app:
 
 '''
-streamlit run app.py
+streamlit run Generate_UUID.py
 '''
 Open the provided URL in your web browser to access the application.
 
