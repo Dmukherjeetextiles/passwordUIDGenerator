@@ -1,43 +1,56 @@
-A simple streamlit application to generate UID or Password along with one-click copy functionality.
+# Professional Streamlit Credentials Manager
 
+A secure, multi-page Streamlit application for generating, managing, and locally storing encrypted passwords and UIDs.
+
+This application provides a professional-grade interface and robust security features, including session-based authentication and strong local encryption.
 https://passworduidgenerator.streamlit.app/
 
-# Unique ID and Password Generator
 
-This is a simple web application built with Streamlit that generates unique IDs and passwords.
+## ✨ Key Features
 
-## Features
+-   **Secure Authentication**: The application is locked behind a master password. All data is inaccessible without it.
+-   **Multi-Page Interface**: A clean, organized user experience with separate pages for different tasks.
+-   **Advanced Password Generation**: Customize password length and included character sets (uppercase, lowercase, numbers, symbols).
+-   **Encrypted Local Storage**: All credentials are saved to a local `credentials.enc` file, encrypted using the industry-standard Fernet (AES-128-CBC) symmetric encryption scheme.
+-   **Full Credential Management (CRUD)**:
+    -   **Create**: Generate and save new credentials.
+    -   **Read**: View all stored credentials in a secure vault.
+    -   **Update**: Overwrite an existing entry by saving a new credential with the same username.
+    -   **Delete**: Remove credentials directly from the vault interface.
+-   **Modular and Maintainable Code**: Backend logic is separated from the UI for clarity and scalability.
 
-- Generate a random UUID with the click of a button.
-- Generate a random password with customizable length and complexity.
+## 🚀 How to Run
 
-## Usage
+1.  **Clone the Repository**:
+    Ensure you have the following file structure:
+    ```bash
+    git clone https://github.com/Dmukherjeetextiles/passwordUIDGenerator.git
+    ```
 
-1. Clone the repository:
+2.  **Install Dependencies**:
+    Navigate to the project directory in your terminal and run:
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-```
-https://github.com/Dmukherjeetextiles/passwordUIDGenerator.git
-'''
-Navigate to the project directory:
+3.  **Run the Application**:
+    ```bash
+    streamlit run main_app.py
+    ```
 
-'''
-cd unique-id-password-generator
-'''
-Install the required dependencies:
+4.  **Access in Browser**:
+    Open the local URL provided by Streamlit in your web browser.
 
-'''
-pip install -r requirements.txt
-'''
-Run the Streamlit app:
+## 🔐 Security Model
 
-'''
-streamlit run Generate_UUID.py
-'''
-Open the provided URL in your web browser to access the application.
+-   **Master Password**: The application uses your master password to derive a 256-bit encryption key via SHA-256 hashing. **This master password is never stored**. It is only held in your browser's memory for the duration of the session.
+-   **Encryption Key**: The derived key is used to encrypt and decrypt the `credentials.enc` file.
+-   **Local Storage**: Your encrypted data never leaves your computer.
+-   **Session Management**: The application state is cleared upon logout or closing the browser tab, ensuring no residual access.
 
-## Dependencies
-Streamlit: Web framework for creating interactive web applications with Python.
-Python: Programming language used for the backend logic.
-uuid: Python module for generating UUIDs.
-random: Python module for generating random values.
-string: Python module for string manipulation.
+**⚠️ Important**: If you forget your master password, there is **no way** to recover the data in your `credentials.enc` file. Store your master password securely.
+
+## 📦 Dependencies
+-   **Streamlit**: For the web application framework.
+-   **Pandas**: For structured data management.
+-   **Cryptography**: For robust, high-level cryptographic functions.
