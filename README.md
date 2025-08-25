@@ -3,7 +3,6 @@
 A secure, multi-page Streamlit application for generating, managing, and locally storing encrypted passwords and UIDs.
 
 This application provides a professional-grade interface and robust security features, including session-based authentication and strong local encryption.
-https://passworduidgenerator.streamlit.app/
 
 
 ## ✨ Key Features
